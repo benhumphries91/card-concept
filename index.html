@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="lujo">
+	<head>
+	<base href="/card-concept/">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="dist/assets/css/styles.css" />
+
+	</head>
+	<body>
+		<main class="container">
+			<div ng-controller="PropertyController as property" class="product row">
+				<div ng-repeat="villa in property.villa" class="col-xs-12 col-sm-6 col-md-4">
+					<div class="card">
+						<div class="card__header">
+							<h3 class="header header--left">{{villa.price | currency : '£'}}</h3>
+							<img ng-src="dist/assets/images/{{ villa.image }}.jpeg" alt="hotel" >
+						</div>
+						<div class="card__content card__content--curved card__content-orange">
+							<h3>
+								{{villa.name}}
+							</h3>
+							<p>{{villa.description}}</p>
+							<a href="#" class="btn btn--light">More Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="dist/assets/js/app.min.js"></script>
+		<!-- // <script type="text/javascript" src="src/scripts/app.js"></script> -->
+	</body>
+</html>
